@@ -1,0 +1,19 @@
+{
+    "name": "mihdan/mihdan-kladr-for-woocommerce",
+    "description": "KLADR for WooCommerce",
+    "type": "wordpress-plugin",
+    "license": "GPL2",
+    "authors": [
+        {
+            "name": "Mikhail Kobzarev",
+            "email": "mikhail@kobzarev.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "classes"
+        ]
+    }
+}
