@@ -10,7 +10,11 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "composer/installers": "*",
+        "wptrt/admin-notices": "^1.0",
+        "mihdan/wp-oop-settings-api": "^1.0"
+    },
     "autoload": {
         "classmap": [
             "classes"
