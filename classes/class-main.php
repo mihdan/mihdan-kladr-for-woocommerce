@@ -24,22 +24,34 @@ class Main {
 	private $wposa;
 
 	/**
-	 * WP_OSA instance.
+	 * Notices instance.
 	 *
 	 * @var Notices $wprtr
 	 */
 	private $wprtr;
 
 	/**
+	 * Settings instance.
+	 *
+	 * @var Settings $settings
+	 */
+	private $settings;
+
+	/**
 	 * Main constructor.
 	 *
-	 * @param WPOSA   $wposa WP_OSA instance.
-	 * @param Notices $wprtr Notices instance.
+	 * @param WPOSA    $wposa WP_OSA instance.
+	 * @param Notices  $wprtr Notices instance.
+	 * @param Settings $settings Settings instance.
 	 */
-	public function __construct( $wposa = null, $wprtr = null ) {
+	public function __construct( $wposa = null, $wprtr = null, $settings = null ) {
 		$this->wposa = $wposa;
 		if ( ! $this->wposa ) {
-			$this->wposa = new WPOSA();
+			$this->wposa = new WPOSA(
+				__( 'Mihdan: KLADR For WooCommerce', 'mihdan-kladr-for-woocommerce' ),
+				MIHDAN_KLADR_FOR_WOOCOMMERCE_VERSION,
+				MIHDAN_KLADR_FOR_WOOCOMMERCE_SLUG
+			);
 		}
 
 		$this->wprtr = $wprtr;
@@ -47,9 +59,15 @@ class Main {
 			$this->wprtr = new Notices();
 		}
 
+		$this->settings = $settings;
+		if ( ! $this->settings ) {
+			$this->settings = new Settings( $this->wposa );
+		}
+
 		if ( ! $this->requirements() ) {
 			return;
 		}
+
 		$this->hooks();
 	}
 
