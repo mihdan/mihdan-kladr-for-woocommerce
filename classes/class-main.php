@@ -8,7 +8,7 @@
 namespace Mihdan\KladrForWooCommerce;
 
 use \WPTRT\AdminNotices\Notices;
-use \Mihdan\WP_OSA\WP_OSA;
+use \Mihdan\WPOSA\WPOSA;
 
 /**
  * Class Main
@@ -19,7 +19,7 @@ class Main {
 	/**
 	 * WP_OSA instance.
 	 *
-	 * @var WP_OSA $wposa
+	 * @var WPOSA $wposa
 	 */
 	private $wposa;
 
@@ -33,13 +33,13 @@ class Main {
 	/**
 	 * Main constructor.
 	 *
-	 * @param WP_OSA  $wposa WP_OSA instance.
+	 * @param WPOSA   $wposa WP_OSA instance.
 	 * @param Notices $wprtr Notices instance.
 	 */
 	public function __construct( $wposa = null, $wprtr = null ) {
 		$this->wposa = $wposa;
 		if ( ! $this->wposa ) {
-			$this->wposa = new WP_OSA();
+			$this->wposa = new WPOSA();
 		}
 
 		$this->wprtr = $wprtr;
