@@ -6,6 +6,7 @@
  *
  * @package mihdan-kladr-for-woocommerce
  */
+
 namespace Mihdan\KladrForWooCommerce;
 
 define( 'MIHDAN_KLADR_FOR_WOOCOMMERCE_VERSION', '0.1' );
@@ -15,5 +16,6 @@ define( 'MIHDAN_KLADR_FOR_WOOCOMMERCE_URL', untrailingslashit( plugin_dir_url( _
 define( 'MIHDAN_KLADR_FOR_WOOCOMMERCE_SLUG', 'mihdan-kladr-for-woocommerce' );
 
 require_once MIHDAN_KLADR_FOR_WOOCOMMERCE_DIR . '/vendor/autoload.php';
+require_once MIHDAN_KLADR_FOR_WOOCOMMERCE_DIR . '/vendor/mihdan/wp-oop-settings-api/src/class-wp-osa.php';
 
 new Main();

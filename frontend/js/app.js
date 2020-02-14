@@ -20,8 +20,8 @@ jQuery( function ( $ ) {
 	 */
 	$( '#billing_address_1' ).fias( {
 		type: $.fias.type.street,
-		parentType: 'street',
-		parentId: 'billing_city'
+		parentType: 'city',
+		parentInput: $( '#billing_city' ),
 	} );
 
 	/**
